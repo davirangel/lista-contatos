@@ -1,0 +1,58 @@
+
+        
+<!-- CABEÇALHO E TOTAL DE CONTATOS -->
+<div class="jumbotron text-center">
+    <h1>Lista de Produtos <span class="label label-info">{{ produtos.length }}</span></h1>
+</div>
+
+<!-- LISTA NOSSOS CONTATOS -->
+<div id="lista-produtos">
+    <table class="table table-striped">
+
+        <tr>
+            <th>Nome</th>
+            <th>Codigo</th>
+            <th>Valor</th>
+            <th>Opções</th>
+        </tr>
+
+        <!-- LOOP PARA CARREGAR TODOS OS CONTATOS EM $scope.contatos -->
+        <tr ng-repeat="produto in produtos">
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.codigo }}</td>
+            <td>{{ produto.valor }}</td>
+            <td>
+                <button type="button" class="btn btn-default" ng-click="editarProduto(produto._id)">Editar</button>
+                <button type="button" class="btn btn-primary" ng-click="deletarProduto(produto._id)">Remover</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<!-- FORMULÁRIO PARA CRIARMOS UM NOVO CONTATO -->
+<div id="produto-form">
+    <hr>
+    <form name="formulario">
+        <div class="form-group col-md-3">
+            <label for="nomeProduto">Nome</label>
+            <input type="text" class="form-control" id="nomeProduto" placeholder="Produto" ng-model="formProduto.nome">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="codigoProduto">Código</label>
+            <input name="codigo" type="text" maxlength="9"
+                class="form-control" id="codigoProduto"  placeholder="111.111.111" ng-model="formProduto.codigo">
+            <!--<span class="text-danger">Código inválido</span>-->
+        </div>
+        <div class="form-group col-md-3">
+            <label for="valorProduto">Valor</label>
+            <input type="text" class="form-control" id="valorProduto"
+             placeholder="R$ 5" ng-model="formProduto.valor">
+        </div>
+        <div class="form-group col-md-3">
+            <!-- createToDo() WILL CREATE NEW TODOS -->
+            <button type="submit" class="btn btn-primary" ng-click="criarProduto()">Criar</button>
+            <button type="submit" class="btn btn-info" ng-click="atualizarProduto()">Atualizar</button>
+        </div>
+    </form>
+</div>

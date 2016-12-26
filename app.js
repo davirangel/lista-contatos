@@ -19,6 +19,7 @@ var methodOverride = require('method-override');
 mongoose.connect('mongodb://localhost/contato');
 // Requisição ao arquivo que cria nosso model Contato
 require('./models/Contato');
+require('./models/Produto');
  
  
 // DEFININDO A APLICAÇÃO ==============================
@@ -38,8 +39,10 @@ app.use(methodOverride());
 // ROTAS ===============================================
 // Incluindo nossas rotas definidas no arquivo routes/index.js
 var index = require('./routes/index');
+var produto = require('./routes/produto');
 // definindo nossas rotas na aplicação
-app.use('/', index);
+app.use('/api/contatos', index);
+app.use('/api/produtos', produto);
  
  
 // LISTEN (iniciando nossa aplicação em node) ==========

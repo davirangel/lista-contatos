@@ -6,7 +6,7 @@ var router = express.Router();
 var Contato = mongoose.model('Contato');
  
 // ROTA BUSCAR ============================================
-router.get('/api/contatos', function(req, res) {
+router.get('/', function(req, res) {
     // utilizaremos o mongoose para buscar todos os contatos no BD
     Contato.find(function(err, contatos) {
         // Em caso de erros, envia o erro na resposta
@@ -18,7 +18,7 @@ router.get('/api/contatos', function(req, res) {
 });
  
 // ROTA CRIAR =============================================
-router.post('/api/contatos', function(req, res) {
+router.post('/', function(req, res) {
     // Cria um contato, as informações são enviadas por uma requisição AJAX pelo Angular
     Contato.create({
         nome : req.body.nome,
@@ -39,7 +39,7 @@ router.post('/api/contatos', function(req, res) {
 });
  
 // ROTA DELETAR ============================================
-router.delete('/api/contatos/:contato_id', function(req, res) {
+router.delete('/:contato_id', function(req, res) {
     // Remove o contato no Model pelo parâmetro _id
     Contato.remove({
         _id : req.params.contato_id
@@ -56,7 +56,7 @@ router.delete('/api/contatos/:contato_id', function(req, res) {
 });
  
 // ROTA EDITAR =============================================
-router.get('/api/contatos/:contato_id', function(req, res) {
+router.get('/:contato_id', function(req, res) {
     // Busca o contato no Model pelo parâmetro id
     Contato.findOne({
         _id : req.params.contato_id
@@ -68,7 +68,7 @@ router.get('/api/contatos/:contato_id', function(req, res) {
 });
  
 // ROTA ATUALIZAR ==========================================
-router.put('/api/contatos/:contato_id', function(req, res) {
+router.put('/:contato_id', function(req, res) {
     // Busca o contato no Model pelo parâmetro id
     var contatoData = req.body;
     var id = req.params.contato_id;
@@ -92,4 +92,3 @@ router.get('*', function(req, res) {
 });
  
 module.exports = router;
-	

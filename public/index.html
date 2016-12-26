@@ -1,5 +1,5 @@
 <!-- index.html -->
-<!doctype html>
+<!-- doctype html -->
  
 <!-- ESPECIFICANDO NOSSO MÓDULO ANGULAR listaContatos -->
 <html ng-app="listaContatos">
@@ -13,82 +13,41 @@
  
     <!-- CSS -->
     <!-- Carregando o bootstrap-->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
     <style>
         html                    { overflow-y:scroll; }
-        body                    { padding-top:50px; }
+        body                    { padding-top:50px;}
         #lista-contatos         { margin-bottom:30px; }
         form button             { margin-top: 25px; }
-        form .form-group:first-child { padding-left: 0; }
+        form .form-group{ padding: 0; }
+        .jumbotron { background-color: #fff; }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
  
-    <!-- JS -->
-    <!-- Carregando a biblioteca jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <!-- Carregando a biblioteca AngularJS -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script src="angularApp.js"></script>
  
 </head>
 <!-- DEFINE O CONTROLLER E BUSCA TODOS OS CONTATOS -->
-<body ng-controller="mainController">
+<body>
+   
+   
     <div class="container">
- 
-        <!-- CABEÇALHO E TOTAL DE CONTATOS -->
-        <div class="jumbotron text-center">
-            <h1>Lista de Contatos <span class="label label-info">{{ contatos.length }}</span></h1>
-        </div>
- 
-        <!-- LISTA NOSSOS CONTATOS -->
-        <div id="lista-contatos">
-            <table class="table table-striped">
- 
-                <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Telefone</th>
-                    <th>Opções</th>
-                </tr>
- 
-                <!-- LOOP PARA CARREGAR TODOS OS CONTATOS EM $scope.contatos -->
-                <tr ng-repeat="contato in contatos">
-                    <td>{{ contato.nome }}</td>
-                    <td>{{ contato.email }}</td>
-                    <td>{{ contato.telefone }}</td>
-                    <td>
-                        <button type="button" class="btn btn-default" ng-click="editarContato(contato._id)">Editar</button>
-                        <button type="button" class="btn btn-primary" ng-click="deletarContato(contato._id)">Remover</button>
-                    </td>
-                </tr>
- 
-            </table>
-        </div>
- 
-        <!-- FORMULÁRIO PARA CRIARMOS UM NOVO CONTATO -->
-        <div id="contato-form">
-            <hr>
-            <form>
-                <div class="form-group col-md-3">
-                    <label for="nomeContato">Nome</label>
-                    <input type="text" class="form-control" id="nomeContato" placeholder="Nome Sobrenome" ng-model="formContato.nome">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="emailContato">E-mail</label>
-                    <input type="text" class="form-control" id="emailContato" placeholder="exemplo@exemplo.com" ng-model="formContato.email">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="telefoneContato">Telefone</label>
-                    <input type="text" class="form-control" id="telefoneContato" placeholder="(00) 0000-0000" ng-model="formContato.telefone">
-                </div>
-                <div class="form-group col-md-3">
-                    <!-- createToDo() WILL CREATE NEW TODOS -->
-                    <button type="submit" class="btn btn-primary" ng-click="criarContato()">Criar</button>
-                    <button type="submit" class="btn btn-info" ng-click="atualizarContato()">Atualizar</button>
-                </div>
-            </form>
-        </div>
- 
+        
+        <div class="ng-view"></div>
     </div>
+
+    <!-- JS -->
+    <!-- Carregando a biblioteca jQuery -->
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <!-- Carregando a biblioteca AngularJS -->
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-route/angular-route.min.js"></script>
+    <script src="angularApp.js"></script>
+    <script src="controller/contatosController.js"></script>
+    <script src="controller/produtoController.js"></script>
  
 </body>
 </html>
