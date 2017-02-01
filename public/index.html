@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!-- doctype html -->
+ 
+<!-- ESPECIFICANDO NOSSO MÓDULO ANGULAR listaContatos -->
+<html ng-app="listaContatos">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <!-- Otimizar a exibição em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Lista de Contatos</title>
+ 
+    <!-- CSS -->
+    <!-- Carregando o bootstrap-->
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px;}
+        #lista-contatos         { margin-bottom:30px; }
+        form button             { margin-top: 25px; }
+        form .form-group{ padding: 0; }
+        .jumbotron { background-color: #fff; }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+ 
+ 
+</head>
+<!-- DEFINE O CONTROLLER E BUSCA TODOS OS CONTATOS -->
+<body>
+   
+   
+    <div class="container">
+        
+        <div class="ng-view"></div>
+    </div>
+
+    <!-- JS -->
+    <!-- Carregando a biblioteca jQuery -->
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <!-- Carregando a biblioteca AngularJS -->
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-route/angular-route.min.js"></script>
+    <script src="angularApp.js"></script>
+    <script src="controller/contatosController.js"></script>
+    <script src="controller/produtoController.js"></script>
+ 
+</body>
+</html>
