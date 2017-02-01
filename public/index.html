@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
     <style>
         html                    { overflow-y:scroll; }
-        body                    { padding-top:50px;}
         #lista-contatos         { margin-bottom:30px; }
         form button             { margin-top: 25px; }
         form .form-group{ padding: 0; }
@@ -26,6 +25,56 @@
             -webkit-appearance: none;
             margin: 0;
         }
+        .navbar{
+            display: flex;
+            border: 0px;
+            border-width: 0px;
+            border-radius: 0px;
+            position: fixed;
+            background-color: #2A3F54;
+        }
+        .btn-custom {
+            width: 20vw;
+            margin-left: auto;
+            margin-right: auto;
+            border-width: 0px;
+            border-radius: 0px;
+        }
+        .container-button {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0px;
+        }
+        .body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .navbar-btn {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .btn-lg, .btn-group-lg > .btn {
+            padding: 10px 16px;
+            font-size: 18px;
+            line-height: 1.3333333;
+            border-radius: 0px;
+        }
+        .btn-info {
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+        }
+        .container {
+            position: absolute;
+            left: 20vw;
+            width: 80vw;
+        }
+
     </style>
  
  
@@ -33,7 +82,13 @@
 <!-- DEFINE O CONTROLLER E BUSCA TODOS OS CONTATOS -->
 <body>
    
-   
+   <div class="navbar navbar-default">
+       <div class="container-button">
+           <a href="/" class="btn btn-info navbar-btn btn-lg btn-custom">Home</a>
+           <a href="/#!/produto" class="btn btn-info navbar-btn btn-lg btn-custom">Produtos</a>
+           <a href="/#!/contatos" class="btn btn-info navbar-btn btn-lg btn-custom">Contatos</a>
+       </div>  
+   </div>      
     <div class="container">
         
         <div class="ng-view"></div>
