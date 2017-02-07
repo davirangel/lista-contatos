@@ -47,6 +47,6 @@ app.use('/api/produtos', produto);
  
 // LISTEN (iniciando nossa aplicação em node) ==========
 // Define a porta 8080 onde será executada nossa aplicação
-app.listen(8089);
+app.listen(8090);
 // Imprime uma mensagem no console
 console.log("Aplicação executada na porta 8089");
